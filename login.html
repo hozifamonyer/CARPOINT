@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./assests/icons8-car-100.png"
+            type="image/x-icon">
+        <title>LOGIN</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+
+        <style>
+      * {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(65, 65, 70, 0.8), rgba(54, 54, 66, 0.8)), url("./assests/pexels-quentin-martinez-2147503099-31078740.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    left: 50%;
+    bottom:50%;
+    transform: translate(-50%,50%);
+    background-color: #494949;
+    padding: 50px 60px 70px;
+    text-align: center;
+}
+
+
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: white;
+    position: relative;
+}
+.form-box h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.input-fild{
+    background-color: #a0a0a0;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    text-align: center;
+    max-height: 65px;
+    transition:  max-height 0.5s ;
+    overflow: hidden;
+}
+input{
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+.input-fild i{
+    margin-left: 15px;
+    color: #585656;
+   position: relative;
+  top: 20px;
+}
+form p{
+    text-align: left;
+    font-size: 13px;
+    color: white;
+
+}
+form p a{
+    text-decoration: none;
+    color: #ff0000;
+}
+.btn {
+    padding: 10px 22px;
+    background-color: #ff4463;
+    color: white;
+    font-weight: 400;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    flex-basis: 48%;
+}
+
+.btn:hover {
+    background-color: #fd052f;
+
+}
+.btn-fild{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.input-group{
+    height: 280px;
+
+}
+ .disable{
+    background: #410811;
+    color: white;
+    
+}
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <h1 id="title">Sign up</h1>
+                <form action>
+                    <div class="input-group">
+                        <div class="input-fild" id="namefild">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" placeholder="Name">
+                        </div>
+                        <div class="input-fild">
+                            <i class='bx bx-envelope'></i>
+                            <input type="text" placeholder="Email">
+                        </div>
+                        <div class="input-fild">
+                            <i class='bx bxs-key'></i>
+                            <input type="text" placeholder="Password">
+                        </div>
+                        <p>Lost Password <a href="#">click here</a></p>
+                    </div>
+                    <div class="btn-fild">
+                        <button type="button" id="signup" class="btn">Sign
+                            up</button>
+                        <button type="button" id="signim"
+                            class="btn disable">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+       let signup=document.getElementById("signup")
+       let signim=document.getElementById("signim")
+       let namefild=document.getElementById("namefild")
+       let title=document.getElementById("title")
+
+       signim.onclick=function(){
+        namefild.style.maxHeight= "0";
+        title.innerHTML="Sign In"
+        signup.classList.add("disable")
+        signim.classList.remove("disable")
+       }
+       
+       signup.onclick=function(){
+        namefild.style.maxHeight= "60px";
+        title.innerHTML="Sign Up"
+        signim.classList.add("disable")
+       signup.classList.remove("disable")
+       }
+        </script>
+    </body>
+</html>
